@@ -1,0 +1,28 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    margin: auto;
+    padding: auto;
+    background-color: #abd1f4;
+}
+
+header {
+    align-content: center;
+}
+
+body {
+    padding: 20px;
+    align-items: center;
+}
+
+.h1 {
+    justify-items: center;
+}
+
+.row{
+    background-color: #abd1f4;
+}
+
+#forcast {
+    
+}
