@@ -16,28 +16,20 @@
       </header>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-3, pull-left">
+          <div class="col-3, pull-left" style="width: 20rem;">
             <h4>Look up a city: &nbsp;&nbsp;</h4>
             <form id="search" class="form-inline">
-                <input id="userInput" class="form-control" type="text" placeholder="Where to?"/>
+                <input id="userInput" class="form-control" type="text" style="width: 12rem;" placeholder="Where to?"/>
                 <button id="launchSearch" type="submit" class="btn btn-primary">Let's Go!</button>
             </form>
             <br/>
             <div class="container-fluid" id="search-history"></div>
           </div>
-          <div class="col-9, container-fluid, pull-right" id="forecast">
+          <div class="col-9, container-fluid, pull-right" style="width: 50rem; margin-left: 8px;" id="forecast">
             <section id="results">
-              <section id="currentForecast"></section>
+              <section id="currentForecast" class="row"></section>
               <section id="five-day-title"></section>
-              <section id="fiveDayForecast" class="row">
-                <div class="card" style="width: 14rem;">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">temperature?</h5>
-                    <p class="card-text">produce data through api</p>
-                  </div>
-                </div>
-              </section>
+              <section id="fiveDayForecast" class="row"></section>
           </div>
         </div>
       </div>

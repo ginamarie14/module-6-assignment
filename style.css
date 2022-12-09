@@ -1,26 +1,98 @@
 * {
     font-family: 'Poppins', sans-serif;
-    margin: auto;
-    padding: auto;
-    background-color: #abd1f4;
+    box-sizing: border-box;
 }
 
-header {
-    align-content: center;
-}
-
-/* body {
+body {
     padding: 20px;
-} */
-
-.h1 {
-    justify-items: center;
 }
 
-.row{
+h1 {
+    text-align: center;
     background-color: #abd1f4;
-}
+    padding: 30px;
+  }
+  
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .container-fluid {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #search-history {
+    background-color: rgba(255,255,255,0.5);
+    padding-left: 30px;
+  }
+  
+  #results {
+    padding-right: 30px;
+  }
+  
+  #currentForecast {
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #search-history > h4 {
+    padding-top: 20px;
+  }
+  
+  #currentForecast > h2,
+  img {
+    display: inline;
+    padding-right: 10px;
+  }
+  
+  #forecastContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  span {
+  padding: 5px;
+  margin-left: 5px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  #card-body  {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .searchListBtn {
+    text-align: left;
+  }
 
-#forcast {
-    
-}
+
+/* Cards are split into two columns at 992px or smaller */
+@media screen and (max-width: 1420px) {
+    .col-3 {
+      width: 25%;
+    }
+    .col-9 {
+        width: 65%;
+    }
+  }
+  
+  /* Cards are stacked on top of each other at 768px or smaller */
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+  }
+  

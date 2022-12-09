@@ -48,10 +48,10 @@ const showWeather = (data) => {
   $("#currentForecast") //check
   .append(`<h3>${data.name}</h3>`)
   .append(`<h4>(${formattedDate})</h4>`)
-  //.append(`<img src=${iconUrl}>`)
-  .append(`<p>Temperature: ${data.main.temp}&#176;F</p>`)
-  .append(`<p>Humidity: ${data.main.humidity}%</p>`)
-  .append(`<p>Windspeed: ${data.wind.speed}MPH</p>`);
+  .append(`<img src=${iconUrl}>`)
+  .append(`<p>Temperature: ${data.main.temp}&#176;F&nbsp;&nbsp;&nbsp;</p>`)
+  .append(`<p>Humidity: ${data.main.humidity}%&nbsp;&nbsp;&nbsp;</p>`)
+  .append(`<p>Windspeed: ${data.wind.speed} MPH&nbsp;&nbsp;&nbsp;</p>`);
   UVindex(data.coord.lat, data.coord.lon);
 };
 
@@ -65,7 +65,7 @@ const UVindex = (latitude, longitude) => {
   .then(function (uv) {
     let uvIndex = uv.value;
     $('#currentForecast').append(
-      `<p>UV Index: <span>${uvIndex}</span></p>`);
+      `<p>UV Index:<span>${uvIndex}</span></p>`);
     })
     .catch();
   };
@@ -88,7 +88,7 @@ const showFiveDayForecast = (data) => {
     let icon = forecast.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/w/${icon}.png`;
     let date = new Date(forecast.dt * 1000).toLocaleDateString();
-    if (forecast.dt_txt.split(" ")[1] == "09:00:00") {
+    if (forecast.dt_txt.split(" ")[1] == "12:00:00") {
       $('#fiveDayForecast').append(
         `<div class="card" style="width: 14rem;><div class="card-body">
         <img src=${iconUrl}>
