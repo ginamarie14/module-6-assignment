@@ -1,77 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            The Weather Today
-        </title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <h1>The Weather Today</h1>
-        </header>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>
+          The Weather Today
+      </title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <header>
+          <h1>The Weather Today</h1>
+      </header>
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-3" align="left">
+          <div class="col-3, pull-left">
             <h4>Look up a city: &nbsp;&nbsp;</h4>
             <form id="search" class="form-inline">
                 <input id="userInput" class="form-control" type="text" placeholder="Where to?"/>
                 <button id="launchSearch" type="submit" class="btn btn-primary">Let's Go!</button>
-                <button id="current-location" type="submit" class="btn btn-primaty">Current Location</button>
             </form>
-            <div class="container-fluid" id="search-history">
-              <li>INSERT SEARCH HISTORY HERE</li>
-            </div>
+            <div class="container-fluid" id="search-history"></div>
           </div>
-          <div class="col-9, container-fluid" id="forecast">
+          <div class="col-9, container-fluid, pull-right" id="forecast">
             <section id="results">
-					<h3>Chosen city here</h3>
-				</section>
               <section id="currentForecast"></section>
-            <section id="fiveDayForecast" class="row">
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">temperature?</h5>
-                  <p class="card-text">produce data through api</p>
+              <section id="five-day-title"></section>
+              <section id="fiveDayForecast" class="row">
+                <div class="card" style="width: 14rem;">
+                  <img class="card-img-top" src="..." alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">temperature?</h5>
+                    <p class="card-text">produce data through api</p>
+                  </div>
                 </div>
-              </div>
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-            </section>
+              </section>
           </div>
         </div>
-        <footer>
-            <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>
-        </footer>
-    </body>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+      <script src="script.js"></script>
+  </body>
 </html>
