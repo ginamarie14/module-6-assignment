@@ -19,27 +19,10 @@ h1 {
     height: 100%;
   }
   
-  body {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
   .container-fluid {
     margin: 0;
     padding: 0;
   }
-  
-  #search-history {
-    background-color: rgba(255,255,255,0.5);
-    padding-left: 30px;
-  }
-  
-  #search-history > h4 {
-    padding-top: 20px;
-  }
-  
-
   
   span {
   padding: 5px;
