@@ -1,6 +1,5 @@
 * {
     font-family: 'Poppins', sans-serif;
-    align-items: center;
     margin: auto;
     padding: auto;
     background-color: #abd1f4;
@@ -10,9 +9,9 @@ header {
     align-content: center;
 }
 
-body {
+/* body {
     padding: 20px;
-}
+} */
 
 .h1 {
     justify-items: center;

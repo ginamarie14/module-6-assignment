@@ -1,15 +1,13 @@
 const search = $('#launchSearch');
 const userInput = $('#userInput');
-const results = $('#results'); //check example with weatherContainer in example html and js
+const results = $('#results');
 const currentForecast = $('#currentForecast');
 const fiveDayTitle = $('#five-day-title');
 const fiveDayForecastCards = $('#fiveDayForecast');
 const searchHistory = $('#search-history');
 const apiKey = '64a19c2800e2eb5e9845897d2c651095';
 
-
-
-// GET items from storage, pull last array item on page load and set background
+// show last searches
 $(function() {
   let usersSearches = JSON.parse(localStorage.getItem('cities'));
   if (usersSearches !== null) {
@@ -21,7 +19,7 @@ $(function() {
     return false;
 });
 
-// CALL API data functions
+// get data from API
 const theWeather = (searchedCity) => {
   currentForecast.empty();
   fiveDayTitle.empty();
@@ -30,7 +28,7 @@ const theWeather = (searchedCity) => {
   fiveDayForecast(searchedCity);
 }
 
-// API call for current day weather
+// current weather forecast
 const theForecast = (searchedCity) => {
   const queryUrl =
   `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&units=imperial&appid=${apiKey}`;
@@ -41,7 +39,7 @@ const theForecast = (searchedCity) => {
   .catch();
 };
 
-// RENDER current day data and elements
+// generate today's forecast information
 const showWeather = (data) => {
   let icon = data.weather[0].icon;
   let date = data.dt;
@@ -57,7 +55,7 @@ const showWeather = (data) => {
   UVindex(data.coord.lat, data.coord.lon);
 };
 
-// API call and funtion for UV index and conditional statements for UV colour status
+// uv index
 const UVindex = (latitude, longitude) => {
   let queryUVUrl =
   `https://api.openweathermap.org/data/2.5/uvi?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;    
@@ -72,7 +70,7 @@ const UVindex = (latitude, longitude) => {
     .catch();
   };
   
-  // API call for 5 day forecast
+  // 5-day forecast
   const fiveDayForecast = (searchedCity) => {
     const query5DayUrl =
     `https://api.openweathermap.org/data/2.5/forecast?q=${searchedCity}&units=imperial&appid=${apiKey}`;
@@ -83,7 +81,7 @@ const UVindex = (latitude, longitude) => {
     .catch();
   };
   
-// RENDER 5 day forecast data and elements
+// generate cards for 5-day forecast
 const showFiveDayForecast = (data) => {
   $('#five-day-title').append('<h3>5-Day Forecast:</h3>');
   data.list.forEach((forecast) => {
@@ -102,7 +100,8 @@ const showFiveDayForecast = (data) => {
       }
     });
   };
-    
+   
+// search button working
 $(search).on('click', (event) => {
   event.preventDefault();
   const searchedCity = userInput.val().toUpperCase();
@@ -113,21 +112,21 @@ $(search).on('click', (event) => {
     
 let lastSearches = [];
 
-// SET items to storage
+// save searches
 const saveSearches = (searchedCity) => {
 lastSearches.push(searchedCity);
 localStorage.setItem('cities', JSON.stringify(lastSearches));
 };
 
-// RENDER search history list function
+// show search history
 const showSearchHistory = (searchedCity) => {
   $('#search-history').append(
     `<button class='btn btn-light btn-block' id='${searchedCity}'>${searchedCity}</button>`
     );
   };
 
-// EVENT LISTENER on search history clicks
-$('#searchHistoryContainer').on('click', (event) => {
+// click on search history tiles to quickly look up a city from user's history
+$('#search-history').on('click', (event) => {
   event.preventDefault();
   let btn = event.target.id;
   theWeather(btn);
