@@ -35,30 +35,11 @@ h1 {
     padding-left: 30px;
   }
   
-  #results {
-    padding-right: 30px;
-  }
-  
-  #currentForecast {
-    background-color: rgba(255,255,255,0.5);
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
   #search-history > h4 {
     padding-top: 20px;
   }
   
-  #currentForecast > h2,
-  img {
-    display: inline;
-    padding-right: 10px;
-  }
-  
-  #forecastContainer {
-    display: flex;
-    justify-content: space-between;
-  }
+
   
   span {
   padding: 5px;
@@ -68,31 +49,3 @@ h1 {
   form {
     margin-bottom: 20px;
   }
-  
-  #card-body  {
-    width: 180px;
-    height: 180px;
-  }
-  
-  .searchListBtn {
-    text-align: left;
-  }
-
-
-/* Cards are split into two columns at 992px or smaller */
-@media screen and (max-width: 1420px) {
-    .col-3 {
-      width: 25%;
-    }
-    .col-9 {
-        width: 65%;
-    }
-  }
-  
-  /* Cards are stacked on top of each other at 768px or smaller */
-  @media screen and (max-width: 768px) {
-    .card {
-      width: 100%;
-    }
-  }
-  

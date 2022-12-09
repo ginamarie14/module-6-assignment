@@ -45,8 +45,8 @@ const showWeather = (data) => {
   let date = data.dt;
   let formattedDate = new Date(date * 1000).toLocaleDateString();
   let iconUrl = `https://openweathermap.org/img/w/${icon}.png`;
-  $("#currentForecast") //check
-  .append(`<h3>${data.name}</h3>`)
+  $("#currentForecast")
+  .append(`<h3>${data.name}&nbsp;</h3>`)
   .append(`<h4>(${formattedDate})</h4>`)
   .append(`<img src=${iconUrl}>`)
   .append(`<p>Temperature: ${data.main.temp}&#176;F&nbsp;&nbsp;&nbsp;</p>`)
@@ -90,7 +90,7 @@ const showFiveDayForecast = (data) => {
     let date = new Date(forecast.dt * 1000).toLocaleDateString();
     if (forecast.dt_txt.split(" ")[1] == "12:00:00") {
       $('#fiveDayForecast').append(
-        `<div class="card" style="width: 14rem;><div class="card-body">
+        `<div class="card" style="width: 10rem;><div class="card-body">
         <img src=${iconUrl}>
         <p>${date}</p>
         <p>Temperature: ${forecast.main.temp}&#176;F</p>
